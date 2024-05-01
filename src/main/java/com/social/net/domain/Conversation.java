@@ -20,6 +20,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "users")
 public class Conversation extends AbstractEntity {
     @Id
     @GeneratedValue

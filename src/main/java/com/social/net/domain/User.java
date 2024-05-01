@@ -9,11 +9,13 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@NoArgsConstructor
-@AllArgsConstructor
+
 @Setter
 @Getter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
+@Table(name = "users")
 public class User extends AbstractEntity {
     @Id
     @GeneratedValue
