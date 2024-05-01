@@ -1,4 +1,5 @@
 package com.social.net.domain;
+import com.social.net.common.domain.AbstractEntity;
 import com.social.net.domain.enums.CommentStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,14 +15,14 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Comment {
+public class Comment extends AbstractEntity {
     @Id
     @GeneratedValue
     private UUID id;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "comment_id")
-    private List<String> images;
+    private List<File> images;
 
     @Enumerated(EnumType.STRING)
     private CommentStatus status;
