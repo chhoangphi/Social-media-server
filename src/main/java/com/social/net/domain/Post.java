@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.UUID;
 
 import com.social.net.common.domain.AbstractEntity;
+import com.social.net.common.utils.App;
 import com.social.net.domain.enums.PostStatus;
 
 import javax.persistence.*;
@@ -19,11 +20,12 @@ import lombok.AccessLevel;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Entity
-public class Post extends AbstractEntity {
+public class Post extends AbstractEntity implements App {
     @Id
     @GeneratedValue
-    private UUID id;
+    private UUID postId;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")

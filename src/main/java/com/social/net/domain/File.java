@@ -3,10 +3,8 @@ package com.social.net.domain;
 import java.util.UUID;
 
 import com.social.net.common.domain.AbstractEntity;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.social.net.common.utils.App;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,8 +15,9 @@ import javax.persistence.Id;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Entity
-public class File extends AbstractEntity {
+public class File extends AbstractEntity implements App {
     @Id
     @GeneratedValue
     private UUID id;

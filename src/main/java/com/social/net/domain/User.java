@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.UUID;
 
 import com.social.net.common.domain.AbstractEntity;
+import com.social.net.common.utils.App;
 import com.social.net.domain.enums.Role;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -21,7 +22,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "users")
 @Builder
-public class User extends AbstractEntity  implements UserDetails {
+public class User extends AbstractEntity implements UserDetails, App {
     @Id
     @GeneratedValue
     @Setter(AccessLevel.PRIVATE)
