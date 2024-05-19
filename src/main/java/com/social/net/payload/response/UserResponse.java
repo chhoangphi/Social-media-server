@@ -10,6 +10,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.sql.Timestamp;
 import java.util.UUID;
 
 @NoArgsConstructor
@@ -24,7 +25,7 @@ public class UserResponse extends AppResponse<UserResponse, User> {
     private String lastname;
     private FileResponse avatar;
     private Role role;
-    private Long createAt;
+    private Timestamp createAt;
 
     public static UserResponse emptyInstance() {
         return new UserResponse();
@@ -35,7 +36,7 @@ public class UserResponse extends AppResponse<UserResponse, User> {
         this.id = entity.getId();
         this.email = entity.getEmail();
         this.role = entity.getRole();
-        this.createAt = entity.getCreateAt();
+        this.createAt = entity.getCreatedAt();
         this.firstname = entity.getFirstname();
         this.lastname = entity.getLastname();
         this.avatar = entity.getAvatar() != null ? FileResponse.emptyInstance().fromEntity(entity.getAvatar()) : null;
@@ -47,7 +48,7 @@ public class UserResponse extends AppResponse<UserResponse, User> {
         entity.setFirstname(firstname);
         entity.setLastname(lastname);
         entity.setRole(role);
-        entity.setCreateAt(createAt);
+        entity.setCreatedAt(createAt);
         return entity;
     }
 
@@ -59,7 +60,6 @@ public class UserResponse extends AppResponse<UserResponse, User> {
                 .firstname(firstname)
                 .lastname(lastname)
                 .role(role)
-                .createAt(createAt)
                 .avatar(avatar == null ? null : avatar.toEntity())
                 .build();
     }

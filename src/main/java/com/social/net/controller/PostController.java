@@ -91,11 +91,11 @@ public class PostController {
 
     @PatchMapping("/{postId}")
     public ResponseEntity<ApiResponse<Object>> updatePost(
-            @RequestHeader("Authorization") String token, @PathVariable(name = "postId") String postId,
+            @RequestHeader("Authorization") String token, @PathVariable(name = "postId") UUID postId,
             @RequestBody PostResponse body) {
         try {
             return ResponseEntity
-                    .ok(ApiResponse.success(postService.updateById(token, UUID.fromString(postId),
+                    .ok(ApiResponse.success(postService.updateById(token, postId,
                             body)));
         } catch (NoPermissionToAccessException e) {
             return ResponseEntity.badRequest()

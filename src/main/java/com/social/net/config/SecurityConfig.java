@@ -27,7 +27,10 @@ public class SecurityConfig {
                         .authorizeHttpRequests(
                                 request -> request
                                         .antMatchers("/api/auth/**", "/api/users/**",
-                                                "/api/files/**",
+                                                "/api/files/**","/api/posts/**",
+                                                "/api/swagger/index.html",
+                                                "/**/swagger-ui.html",
+                                                "/**/*.html",
                                                 "/api/comments/**", "/ws")
                                         .permitAll()
                                         .anyRequest()

@@ -34,7 +34,6 @@ public class User extends AbstractEntity implements UserDetails, App {
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private Role role;
-    private Long createAt;
 
     private String password;
     private String firstname;
@@ -44,7 +43,7 @@ public class User extends AbstractEntity implements UserDetails, App {
     private File avatar;
     @OneToMany(cascade = CascadeType.REMOVE)
     private List<Post> posts;
-    @OneToOne(cascade = CascadeType.REMOVE)
+    @OneToOne
     private Profile profile;
 
     @Override
