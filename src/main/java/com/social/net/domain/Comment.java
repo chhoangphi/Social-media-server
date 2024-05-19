@@ -1,11 +1,10 @@
 package com.social.net.domain;
+
 import com.social.net.common.domain.AbstractEntity;
+import com.social.net.common.utils.App;
 import com.social.net.domain.enums.CommentStatus;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.List;
 import java.util.UUID;
@@ -15,7 +14,8 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Comment extends AbstractEntity {
+@Builder
+public class Comment extends AbstractEntity implements App {
     @Id
     @GeneratedValue
     private UUID id;
@@ -26,7 +26,8 @@ public class Comment extends AbstractEntity {
 
     @Enumerated(EnumType.STRING)
     private CommentStatus status;
-
+    @ManyToOne()
+    private Post post;
     @Column
     private String content;
 

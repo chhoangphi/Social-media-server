@@ -3,6 +3,7 @@ package com.social.net.domain;
 import java.util.UUID;
 
 import com.social.net.common.domain.AbstractEntity;
+import com.social.net.common.utils.App;
 import com.social.net.domain.enums.Gender;
 import com.social.net.domain.enums.ProfileStatus;
 import lombok.AccessLevel;
@@ -23,9 +24,9 @@ import javax.persistence.*;
 @Entity
 @Builder
 @Table(name = "profile")
-public class Profile extends AbstractEntity {
+public class Profile extends AbstractEntity implements App {
     @Id
-//    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue
     @Setter(AccessLevel.PRIVATE)
     protected UUID id;
 

@@ -7,22 +7,14 @@ import com.social.net.common.payload.response.ErrorResponse;
 import com.social.net.payload.request.AuthenticationRequest;
 import com.social.net.payload.request.RegisterRequest;
 import com.social.net.service.IAuthenticationService;
-import org.springframework.web.bind.annotation.RestController;
-
-
 import lombok.RequiredArgsConstructor;
-
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.NoSuchElementException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping("/api/auth")
