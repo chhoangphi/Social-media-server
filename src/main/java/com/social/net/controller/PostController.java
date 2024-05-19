@@ -17,12 +17,12 @@ import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/v1/posts")
+@RequestMapping("/api/posts")
 public class PostController {
 
     private final PostService postService;
 
-    @PostMapping(value = "", headers = "Content-Type=multipart/form-data")
+    @PostMapping(value = "")
     public ResponseEntity<ApiResponse<Object>> createPost(
             @RequestHeader("Authorization") String token,
             @RequestParam(name = "title") String title,
