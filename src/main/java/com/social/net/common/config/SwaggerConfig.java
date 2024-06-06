@@ -41,8 +41,8 @@ public class SwaggerConfig {
 
   private ApiInfo apiInfo() {
     return new ApiInfo(
-        "API Documentation - S-note Project",
-        "Api for S-note Project",
+        "API Documentation - Social Media Project",
+        "Api for Social Media Project",
         "V1",
         "NA terms of service url",
         "Contact",
